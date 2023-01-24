@@ -38,10 +38,10 @@ const App = () => {
   };
   return (
     <>
-      <h1 className="text-center text-3xl py-5 bg-blue-300 font-mono ">
+      <h1 className="text-center text-yellow-400 text-3xl py-3 bg-gradient-to-r from-slate-400 to-zinc-500 font-mono">
         GitHub Profile Finder
       </h1>
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center my-4">
         <input
           type="text"
           className="border-2 border-blue-300 rounded-md p-2 m-2"
@@ -59,7 +59,7 @@ const App = () => {
       </div>
       {isFound && (
         <>
-          <div className="border-2 flex flex-col justify-center items-center w-1/2 max-sm:w-5/6 mx-auto my-5">
+          <div className="border-2 flex flex-col justify-center items-center w-1/2 max-lg:w-5/6 mx-auto my-5">
             <img
               src={user.avatar_url}
               alt="avatar"
@@ -98,7 +98,7 @@ const App = () => {
               </a>
             </div>
           </div>
-          <div className="border-2 flex flex-col justify-center w-1/2 max-sm:w-5/6 mx-auto my-10">
+          <div className="border-2 flex flex-col justify-center w-1/2 max-lg:w-11/12 mx-auto my-10">
             {/* Latest Repos */}
             <h1 className="text-3xl font-sans mx-5">Latest Repostorties</h1>
             <div className="flex flex-col justify-center gap-5 m-5">
