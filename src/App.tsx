@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import axios from "axios";
+import Footer from "./Footer";
 
 const App = () => {
   const [username, setUsername] = useState("");
@@ -137,6 +138,7 @@ const App = () => {
               })}
             </div>
           </div>
+          <Footer />
         </>
       )}
     </>
