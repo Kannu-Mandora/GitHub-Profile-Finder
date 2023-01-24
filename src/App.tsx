@@ -59,7 +59,7 @@ const App = () => {
       </div>
       {isFound && (
         <>
-          <div className="border-2 flex flex-col justify-center items-center w-1/2 mx-auto my-5">
+          <div className="border-2 flex flex-col justify-center items-center w-1/2 max-sm:w-5/6 mx-auto my-5">
             <img
               src={user.avatar_url}
               alt="avatar"
@@ -71,7 +71,7 @@ const App = () => {
             >
               View {username} Profile
             </a>
-            <div className="flex gap-5 my-8">
+            <div className="flex max-sm:flex-col gap-5 my-8">
               <a
                 href={user.profile_link}
                 className="bg-sky-600 text-white px-2 py-1 rounded my-2"
@@ -98,14 +98,14 @@ const App = () => {
               </a>
             </div>
           </div>
-          <div className="border-2 flex flex-col justify-center w-1/2 mx-auto my-10">
+          <div className="border-2 flex flex-col justify-center w-1/2 max-sm:w-5/6 mx-auto my-10">
             {/* Latest Repos */}
             <h1 className="text-3xl font-sans mx-5">Latest Repostorties</h1>
             <div className="flex flex-col justify-center gap-5 m-5">
               {repos.map((repo: any) => {
                 return (
                   <div
-                    className="flex justify-between border-2 p-2 rounded-md"
+                    className="flex max-sm:flex-col justify-between  border-2 p-2 rounded-md"
                     key={repo.url}
                   >
                     <a
@@ -116,15 +116,15 @@ const App = () => {
                     >
                       {repo.name}
                     </a>
-                    <div className="flex gap-10">
+                    <div className="flex max-sm:flex-col gap-10">
                       <span className="bg-blue-300 px-4 py-1 rounded">
-                        <a href={repo.homepage}>
+                        <a href={`https://${repo.homepage}`}>
                           Deployments
                           {repo.homepage !== null ? "✅" : "❌"}
                         </a>
                       </span>
                       <a
-                        href={repo.url}
+                        href={repo.html_url}
                         className="bg-red-300 px-4 py-1 rounded"
                       >
                         GitHub Repository
