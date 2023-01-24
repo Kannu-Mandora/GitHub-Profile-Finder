@@ -19,7 +19,6 @@ const App = () => {
 
   const onSubmit = async (e: any) => {
     e.preventDefault();
-    console.log(username);
     const res = await axios.get(`https://api.github.com/users/${username}`);
     setIsFound(true);
     setUser({
@@ -117,12 +116,18 @@ const App = () => {
                       {repo.name}
                     </a>
                     <div className="flex max-sm:flex-col gap-10">
-                      <span className="bg-blue-300 px-4 py-1 rounded">
-                        <a href={`https://${repo.homepage}`}>
-                          Deployments
-                          {repo.homepage !== null ? "✅" : "❌"}
-                        </a>
+                      {repo.homepage !== null ? (
+                        <span className="bg-blue-300 px-4 py-1 rounded">
+                          <a href={repo.homepage}>
+                            Deployments
+                            {repo.homepage !== null ? "✅" : "❌"}
+                          </a>
+                        </span>
+                      ) : (
+                        <span className="my-auto">
+                          Deployments ❌
                       </span>
+                      )}
                       <a
                         href={repo.html_url}
                         className="bg-red-300 px-4 py-1 rounded"
