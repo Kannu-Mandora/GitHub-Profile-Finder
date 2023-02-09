@@ -107,14 +107,11 @@ const App = () => {
                     className="flex max-sm:flex-col justify-between  border-2 p-2 rounded-md"
                     key={repo.url}
                   >
-                    <a
-                      href={repo.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="my-auto font-semibold"
+                    <span
+                      className="my-auto font-semibold cursor-default"
                     >
                       {repo.name}
-                    </a>
+                    </span>
                     <div className="flex max-sm:flex-col gap-10">
                       {repo.homepage !== null ? (
                         <span className="bg-blue-300 px-4 py-1 rounded">
